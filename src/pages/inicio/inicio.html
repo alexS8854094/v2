@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="azulCATV">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pantalla de inicio</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refrescar()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-icon name="alert"></ion-icon> Alarmas Pendientes: {{ alarmasPendientes }}
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let alarma of alarmas" (click)="goToAlarma(alarma)">
+      <ion-icon name="alert" item-start [color]="alarma.SOLUCIONADO ? 'secondary' : 'danger'"></ion-icon>
+      <h2>{{ alarma.TIPO_ALERTA }}</h2>
+      <p>{{ alarma.FECHA }} - {{ alarma.HORA }}</p>
+      <ion-badge item-end [color]="alarma.SOLUCIONADO ? 'secondary' : 'danger'">
+        {{ alarma.SOLUCIONADO ? 'Resuelta' : 'Pendiente' }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

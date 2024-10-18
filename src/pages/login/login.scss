@@ -1,0 +1,97 @@
+page-login {
+
+        /*
+    .scroll-content{
+        top: 40%;
+        align-content: center;
+        //display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+    }
+    ion-card.card{
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.596);
+        border-radius: 5px;
+    }
+    
+    a, p,
+    ion-card-header.card-header{
+        color: #fff;
+    }
+    
+    .lists > .item-block .first-child{
+        border: medium none;
+    }
+    
+    .item{
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.50);
+        border: medium none;
+    
+        .text-input{
+            color: #fff;
+        }
+        *:-moz-placeholder{
+            color: #fff!important;
+        }
+        *:-ms-input-placeholder{
+            color: #fff!important;
+        }
+        *::-webkit-input-placeholder{
+            color: #fff!important;
+        }
+        input::-moz-placeholder{
+            color: #fff!important;
+        }
+        input::-moz-placeholder{
+            color: #fff!important;
+        }
+    }
+
+    .fondo{
+        background-image: url('../assets/imgs/fondo.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center; 
+        background-size:cover;
+    }
+*/
+
+#login {
+    background: #1c2627 url("../img/login_bg.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+    .scroll-content {
+      display: table !important;
+      width: 100% !important;
+      height: 100% !important;
+  
+      form {
+        display: table-cell;
+        vertical-align: middle;
+  
+        .header {
+          padding-bottom: 20px;
+  
+          img {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+  
+        .button.button-light.active, .button.button-light.activated {
+          color: #fff;
+          opacity: inherit;
+        }
+      }
+    }
+  }
+  
+    
+}

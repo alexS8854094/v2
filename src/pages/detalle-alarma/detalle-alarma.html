@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="azulCATV">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalle Alarma</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Detalles de la Alarma
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-input [(ngModel)]="alarma.FECHA" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-input [(ngModel)]="alarma.HORA" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo de Alerta</ion-label>
+        <ion-input [(ngModel)]="alarma.TIPO_ALERTA" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor de Alerta</ion-label>
+        <ion-input [(ngModel)]="alarma.VALOR_ALERTA" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Encargado</ion-label>
+        <ion-input [(ngModel)]="alarma.ENCARGADO" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Departamento</ion-label>
+        <ion-input [(ngModel)]="alarma.DEPT" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Departamento ID</ion-label>
+        <ion-input [(ngModel)]="alarma.DEPTID" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="alarma.SOLUCIONADO">
+        <ion-label>Fecha de Solución</ion-label>
+        <ion-input [(ngModel)]="alarma.FECHA_APP" readonly></ion-input>
+      </ion-item>
+      <ion-item *ngIf="alarma.SOLUCIONADO">
+        <ion-label>Hora de Solución</ion-label>
+        <ion-input [(ngModel)]="alarma.HORA_APP" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Solución</ion-label>
+        <ion-textarea [(ngModel)]="solucion" [readonly]="verHistorial || alarma.SOLUCIONADO"></ion-textarea>
+      </ion-item>
+      <button ion-button full (click)="enviarSolucion()" *ngIf="!verHistorial && !alarma.SOLUCIONADO">Enviar</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

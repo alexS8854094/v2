@@ -1,0 +1,47 @@
+<ion-menu side="left" id="authenticated" [content]="content" swipeEnabled="true">
+  <ion-header>
+    <ion-toolbar class="user-profile">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <div class="user-avatar">
+              <img src="assets/img/logo 512x512.png"/>
+            </div>
+          </ion-col>
+          <ion-col padding-top col-8>
+            <h2 ion-text class="no-margin bold text-white">
+              {{fun.NombreUsuario}}
+            </h2>
+            <span ion-text color="light">Control de Calidad</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row no-padding class="other-data">
+          <ion-col no-padding class="column">
+            <button ion-button icon-left small full color="light" menuClose disabled>
+              <ion-icon name="contact"></ion-icon>
+              Usuario
+            </button>
+          </ion-col>
+          <ion-col no-padding class="column">
+            <button ion-button icon-left small full color="light" menuClose (click)="exit()">
+              <ion-icon name="md-power"></ion-icon>
+              Salir
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="azulCATV">
+    <ion-list class="user-list">
+      <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+        <ion-icon item-left [name]="menuItem.icon" color="azulCATV"></ion-icon>
+        <span ion-text color="azulCATV">{{menuItem.title}}</span>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

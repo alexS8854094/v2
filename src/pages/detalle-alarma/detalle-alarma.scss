@@ -1,0 +1,25 @@
+page-detalle-alarma {
+    /* detalle-alarma.scss */
+
+/* Estilo específico para el ion-item del encargado */
+.encar-item {
+    position: relative;      /* Asegura que el pseudo-elemento esté bien posicionado */
+    padding-bottom: 8px;     /* Añade un poco de espacio debajo del contenido */
+  
+    /* Línea verde debajo */
+    &::after {
+      content: "";           /* Pseudo-elemento vacío */
+      display: block;
+      width: 50%;            /* Ancho de la línea */
+      height: 2px;           /* Grosor de la línea */
+      background-color: #4caf50; /* Color verde */
+      margin: 0 auto;        /* Centrar la línea */
+      position: absolute;
+      bottom: 0;             /* Posición en la parte inferior del item */
+      left: 0;
+      right: 0;
+    }
+  }
+  
+
+}

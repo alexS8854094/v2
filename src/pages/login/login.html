@@ -1,0 +1,43 @@
+
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Login</strong> 
+      </h2>
+    </div>
+
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="contact" item-start class="text-primary"></ion-icon>
+          Usuario
+        </ion-label>
+        <ion-input type="text" #user value=""></ion-input>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Contraseña
+        </ion-label>
+        <ion-input type="password" #pass value=""></ion-input>
+      </ion-item>
+    </form>
+
+    <p text-right ion-text color="verdeCATV" tappable (click)="forgotPass()"><strong>¿No recuerda la contraseña?</strong></p>
+
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="inicio2(pass, user);">
+        <ion-icon name="log-in"></ion-icon>
+        Iniciar Sesión
+      </button>
+    </div>
+  </div>
+</ion-content>
+
+
+

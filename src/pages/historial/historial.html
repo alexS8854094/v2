@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Historial</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <strong>Búsqueda de Registros Almacenados</strong>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <button color="light" ion-item (click)="editarFechaInicio();" style="text-align: center;">
+              <ion-icon name='md-calendar' color="azulCATV"></ion-icon>
+              Fecha Inicio: {{fechaInicio}}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button color="light" ion-item (click)="editarFechaFin();" style="text-align: center;">
+              <ion-icon name='md-calendar' color="azulCATV"></ion-icon>
+              Fecha Fin: {{fechaFin}}
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              <button ion-button block color="verdeCATV" icon-start (click)="buscarAlarmas()">
+                <ion-icon name='search'></ion-icon>
+                Iniciar Búsqueda
+              </button>
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let item of historialFiltrado" (click)="verDetalleAlarma(item)">
+      <h2>Alarma {{ item.CORRELATIVO }}</h2>
+      <p>Fecha: {{ item.FECHA }}</p>
+      <p>Hora: {{ item.HORA }}</p>
+      <p>Tipo de Alerta: {{ item.TIPO_ALERTA }}</p>
+      <p>Valor de Alerta: {{ item.VALOR_ALERTA }}</p>
+      <p>Encargado: {{ item.ENCARGADO }}</p>
+      <p>Solución: {{ item.SOLUCION }}</p>
+      <p *ngIf="item.SOLUCIONADO"><strong>Solucionado</strong></p>
+      <p *ngIf="item.FECHA_APP">Fecha de Solución: {{ item.FECHA_APP }}</p>
+      <p *ngIf="item.HORA_APP">Hora de Solución: {{ item.HORA_APP }}</p>
+      <p><small>{{ item.fechaRegistro }}</small></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
